@@ -1,0 +1,25 @@
+.heading {
+    color: aqua;
+}
+
+.image {
+    width: 200px;
+}
+
+.box {
+    width: 200px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px 1px black;
+    margin: 10px;
+    color: #489b8d;
+    background-color: rgb(223, 221, 221);
+}
+
+.text-wrap {
+    padding: 10px;
+}
+
+.cntainer {
+    display: flex;
+    flex-wrap: wrap;
+}

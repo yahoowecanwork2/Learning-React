@@ -1,0 +1,16 @@
+.heading {
+    color: blue;
+}
+
+.box {
+    width: 200px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 1px 1px black;
+    margin: 10px;
+    color: #489b8d;
+    background-color: rgb(223, 221, 221);
+}
+
+.image {
+    width: 200px;
+}
