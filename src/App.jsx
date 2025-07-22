@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
 import Navbar from "./navbar";
 import Home from './home';
 import About from './about';
@@ -19,7 +19,8 @@ function App() {
           <Route path='/' element={<h1>Home</h1>} />
           <Route path='/Login' element={<h1>Login</h1>} />
           <Route path='/About' element={<h1>About</h1>} />
-          <Route path='/*' element={<h1><PageNotFound /></h1>} />
+          {/* <Route path='/*' element={<h1><PageNotFound /></h1>} /> */}
+          <Route path='/*' element={<Navigate to="/Login" />} />
         </Routes>
       </BrowserRouter>
 
