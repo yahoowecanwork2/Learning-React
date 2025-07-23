@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router';
 import Navbar from "./navbar";
 import Home from './home';
 import About from './about';
@@ -18,13 +18,19 @@ function App() {
     <div>
 
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
-          <Route path='/' element={<h1><Home /></h1>} />
-          <Route path='/Login' element={<h1><Login /></h1>} />
-          <Route path='/About' element={<h1><About /></h1>} />
+          <Route element={<Navbar />} >
+            <Route path='/' element={<h1><Home /></h1>} />
+            <Route path='/Login' element={<h1><Login /></h1>} />
+            <Route path='/About' element={<h1><About /></h1>} />
+
+          </Route>
+
+
+
           <Route path='/Collage' element={<h1><Collage /></h1>} >
-            <Route path='Student' element={<h2><Student /></h2>} />
+            <Route index element={<h2><Student /></h2>} />
             <Route path='Departments' element={<h2><Departments /></h2>} />
             <Route path='Details' element={<h2><Details /></h2>} />
           </Route>
