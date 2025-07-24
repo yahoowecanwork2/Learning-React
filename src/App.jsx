@@ -22,9 +22,13 @@ function App() {
         <Routes>
           <Route element={<Navbar />} >
             <Route path='/' element={<h1><Home /></h1>} />
-            <Route path='/Login' element={<h1><Login /></h1>} />
-            <Route path='/About' element={<h1><About /></h1>} />
+            <Route path='/user/Login' element={<h1><Login /></h1>} />
+            <Route path='/user/About' element={<h1><About /></h1>} />
 
+          </Route>
+          <Route path='user'>
+            <Route path='/user/Login' element={<h1><Login /></h1>} />
+            <Route path='/user/About' element={<h1><About /></h1>} />
           </Route>
 
 
@@ -34,8 +38,8 @@ function App() {
             <Route path='Departments' element={<h2><Departments /></h2>} />
             <Route path='Details' element={<h2><Details /></h2>} />
           </Route>
-          {/* <Route path='/*' element={<h1><PageNotFound /></h1>} /> */}
-          <Route path='/*' element={<Navigate to="/Login" />} />
+          <Route path='/*' element={<h1><PageNotFound /></h1>} />
+          {/* <Route path='/*' element={<Navigate to="/Login" />} /> */}
         </Routes>
       </BrowserRouter>
 
