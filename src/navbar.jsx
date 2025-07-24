@@ -21,6 +21,9 @@ function Navbar() {
                         <li>
                             <Link className="link" to="/Collage">Collage</Link>
                         </li>
+                        <li>
+                            <Link className="link" to="/users">Users</Link>
+                        </li>
 
                     </ul>
                 </div>

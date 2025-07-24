@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router';
 import Student from './student';
 import Departments from './Department';
 import Details from './Details';
+import Users from './Users';
 
 
 function App() {
@@ -24,8 +25,11 @@ function App() {
             <Route path='/' element={<h1><Home /></h1>} />
             <Route path='/user/Login' element={<h1><Login /></h1>} />
             <Route path='/user/About' element={<h1><About /></h1>} />
-
+            <Route path='/users' element={<h1><Users /></h1>} />
           </Route>
+
+
+
           <Route path='user'>
             <Route path='/user/Login' element={<h1><Login /></h1>} />
             <Route path='/user/About' element={<h1><About /></h1>} />
