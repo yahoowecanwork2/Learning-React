@@ -11,3 +11,28 @@
     font-size: 20px;
     font-weight: 800;
 }
+
+.navlist {
+    list-style: none;
+    /* bullets hatado */
+    display: flex;
+    /* horizontal layout */
+    gap: 500px;
+    /* items ke beech gap */
+    background-color: #f1f1f1;
+    /* nav ka background */
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.navlist li {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navlist li:hover {
+    color: #61dafb;
+    /* hover par light blue */
+}

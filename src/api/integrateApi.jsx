@@ -1,46 +1,26 @@
-import { useEffect, useState } from "react";
-import './list.css'
+import { NavLink, Route, Routes } from "react-router";
+import Userlist from "./userlist";
+import UserAdd from "./useradd";
 
 function ItegateAPI() {
-    const [userData, setUserData] = useState([]);
-    const [loading, setloading] = useState(false);
-    useEffect(() => {
-        setloading(true);
-        getUserData();
-    }, []
-
-    );
-
-    const getUserData = async () => {
-        const url = ("http://localhost:5000/users")
-        let response = await fetch(url);
-        response = await response.json();
-        setUserData(response);
-        setloading(false);
-
-    }
-    // console.log(response);
-
-
     return (
 
         <div>
-            <h1>integrate json server and Api</h1>
-            <ul className="user-list user-list-head ">
-                <li>Id</li>
-                <li>Name</li>
-                <li>age</li>
-            </ul>
+            <ul className="navlist">
+                <li>
+                    <NavLink to="/">listS</NavLink>
 
-            {
-                !loading ? userData.map((user, index) => (
-                    <ul key={index} className="user-list ">
-                        <li> {user.id}</li>
-                        <li> {user.name}</li>
-                        <li> {user.age}</li>
-                    </ul>
-                )) : <h1>data loading ...</h1>
-            }
+                </li>
+                <li>   <NavLink to="/add">addUser</NavLink></li>
+            </ul>
+            {/* <h1>make route and pages to add user and user ux</h1> */}
+            {/* <Userlist /> */}
+            <Routes>
+                <Route path="/" element={<Userlist />} />
+                <Route path="/add" element={<UserAdd />} />
+            </Routes>
+
+
         </div >
     )
 }
