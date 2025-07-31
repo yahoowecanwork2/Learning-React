@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import './list.css'
+import { use } from "react";
 
 function Userlist() {
     const [userData, setUserData] = useState([]);
     const [loading, setloading] = useState(false);
+    const url = ("http://localhost:5000/users")
     useEffect(() => {
         setloading(true);
         getUserData();
@@ -12,13 +14,27 @@ function Userlist() {
     );
 
     const getUserData = async () => {
-        const url = ("http://localhost:5000/users")
+
         let response = await fetch(url);
         response = await response.json();
         setUserData(response);
         setloading(false);
 
     }
+    const userIdDelete = async (id) => {
+        let response = await fetch(url + "/" + id, {
+            method: 'DELETE'
+        });
+        response = await response.json();
+        if (response) {
+            alert("data deleted");
+            getUserData();
+        }
+
+    }
+
+
+
     // console.log(response);
 
 
@@ -30,6 +46,7 @@ function Userlist() {
                 <li>Id</li>
                 <li>Name</li>
                 <li>age</li>
+                <li>action</li>
             </ul>
 
             {
@@ -38,6 +55,7 @@ function Userlist() {
                         <li> {user.id}</li>
                         <li> {user.name}</li>
                         <li> {user.age}</li>
+                        <li><button onClick={() => userIdDelete(user.id)} >Delete</button></li>
                     </ul>
                 )) : <h1>data loading ...</h1>
             }
