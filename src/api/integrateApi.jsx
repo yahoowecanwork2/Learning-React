@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './list.css'
 
 function ItegateAPI() {
     const [userData, setUserData] = useState([]);
@@ -25,13 +26,22 @@ function ItegateAPI() {
 
         <div>
             <h1>integrate json server and Api</h1>
+            <ul className="user-list user-list-head ">
+                <li>Id</li>
+                <li>Name</li>
+                <li>age</li>
+            </ul>
 
             {
                 !loading ? userData.map((user, index) => (
-                    <h1 key={index}>{user.name}</h1>
+                    <ul key={index} className="user-list ">
+                        <li> {user.id}</li>
+                        <li> {user.name}</li>
+                        <li> {user.age}</li>
+                    </ul>
                 )) : <h1>data loading ...</h1>
             }
-        </div>
+        </div >
     )
 }
 export default ItegateAPI;
