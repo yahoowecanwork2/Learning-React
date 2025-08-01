@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import './list.css'
 import { use } from "react";
+import { useNavigate } from "react-router";
 
 function Userlist() {
     const [userData, setUserData] = useState([]);
     const [loading, setloading] = useState(false);
+    const navigate = useNavigate();
     const url = ("http://localhost:5000/users")
     useEffect(() => {
         setloading(true);
@@ -32,6 +34,9 @@ function Userlist() {
         }
 
     }
+    const userEdit = (id) => {
+        navigate("/edit/" + id)
+    }
 
 
 
@@ -56,6 +61,7 @@ function Userlist() {
                         <li> {user.name}</li>
                         <li> {user.age}</li>
                         <li><button onClick={() => userIdDelete(user.id)} >Delete</button></li>
+                        <li><button onClick={() => userEdit(user.id)} >Edit</button></li>
                     </ul>
                 )) : <h1>data loading ...</h1>
             }
