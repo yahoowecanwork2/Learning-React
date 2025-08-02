@@ -20,16 +20,16 @@ function UserEdit() {
         console.log(response);
     }
     return (
-        <div className="form-container">
-            <h1>User Edit Page</h1>
-            <input type="text" value={id}
-                placeholder="Enter your id" /><br /><br />
-            <input type="text" value={name}
-                placeholder="Enter your name" /><br /><br />
-            <input type="text" value={age}
-                placeholder="Enter your age" /><br /><br />
-            <button>Update User</button>
-        </div>
+        // <div className="form-container">
+        //     <h1>User Edit Page</h1>
+        //     <input type="text" value={id}
+        //         placeholder="Enter your id" /><br /><br />
+        //     <input type="text" value={name}
+        //         placeholder="Enter your name" /><br /><br />
+        //     <input type="text" value={age}
+        //         placeholder="Enter your age" /><br /><br />
+        //     <button>Update User</button>
+        // </div>
     )
 }
 export default UserEdit;
